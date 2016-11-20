@@ -1,0 +1,6 @@
+(defun real-maphash (fn h)
+    (let (result)
+        (setf result (make-hash-table :test #'equal))
+        (maphash #'(lambda (k v)
+                        (setf (gethash k result) (funcall fn v))) h)
+        result))

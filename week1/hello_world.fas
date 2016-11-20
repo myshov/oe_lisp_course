@@ -1,0 +1,5 @@
+(|SYSTEM|::|VERSION| '(20080430.))
+#0Y_ #0Y |CHARSET|::|UTF-8|
+#Y(#:|1 1 (PRINT "Hello World!")-1|
+   #17Y(00 00 00 00 00 00 00 00 20 01 DA 38 01 31 8E 19 01) ("Hello World!")
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
