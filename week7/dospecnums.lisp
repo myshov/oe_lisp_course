@@ -1,14 +1,10 @@
-(defvar *lst*)
-
-(defun split-on-digits (n)
-    (if (>= n 1)
-        (progn
-            (push  (mod n 10) *lst*)
-            (split-on-digits (floor n 10))))
-    *lst*)
+(defun split-on-digits (n &optional lst)
+    (when (>= n 1)
+        (push (mod n 10) lst)
+        (setf lst (new-split-on-digits (floor n 10) lst)))
+    lst)
 
 (defun specialp (n)
-    (setf *lst* nil)
     (let ((lst (split-on-digits n)))
         (if (and (>= (length lst) 2) (every #'evenp lst))
             T
